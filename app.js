@@ -16,10 +16,15 @@ const reverseMd5 = ReverseMd5({
     maxLen: 12
 });
 
-const encryptUserMessage = data => 
-    console.log('Your encrypted message: ', md5(data));
-const decryptUserMessage = data =>
-    console.log('Your message decrypted: ', reverseMd5(data).str);
+const commandLineKeys = ['--enc', '--dec'];
+
+const encrypt = data => md5(data);
+const decrypt = data => reverseMd5(data).str;
+
+const encryptUserMessage = message => 
+    console.log('Your encrypted message: ', encrypt(message));
+const decryptUserMessage = message =>
+    console.log('Your message decrypted: ', decrypt(message));
 
 const chooseModeCallback = mode => {
     switch (mode) {
@@ -36,4 +41,26 @@ const chooseModeCallback = mode => {
     }
 }
 
-rl.question('Please, choose mode\n1 - Encrypt, 2 - Decrypt\nYour mode: ', chooseModeCallback);
+
+// Entry Point //
+
+((key, data) => {
+    if (key && data) {
+        if (commandLineKeys.includes(key)) {
+            switch(key) {
+                case '--enc':
+                    console.log(encrypt(data));
+                    break;
+                case '--dec':
+                    console.log(decrypt(data));
+                    break;
+            }
+            rl.close();
+        } else {
+            console.log('Unknown command!');
+        }
+    } else {
+        rl.question('Please, choose mode\n1 - Encrypt, 2 - Decrypt\nYour mode: ', chooseModeCallback);
+    }
+})(process.argv[2], process.argv[3]);
+
