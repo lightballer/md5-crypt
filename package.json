@@ -1,5 +1,5 @@
 {
-  "name": "md5crypt",
+  "name": "md5-crypt",
   "version": "1.0.0",
   "description": "Node.js md5 console cryptor & decryptor",
   "main": "app.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Explodeus/md5Crypt.git"
+    "url": "git+https://github.com/genericsdevelopmentstudio/md5-crypt/"
   },
   "keywords": [
     "Node",
@@ -19,11 +19,12 @@
   "author": "vsokha",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Explodeus/md5Crypt/issues"
+    "url": "https://github.com/genericsdevelopmentstudio/md5-crypt//issues"
   },
-  "homepage": "https://github.com/Explodeus/md5Crypt#readme",
+  "homepage": "https://github.com/genericsdevelopmentstudio/md5-crypt/#readme",
   "dependencies": {
     "md5": "^2.2.1",
     "reverse-md5": "0.0.4"
-  }
+  },
+  "devDependencies": {}
 }
