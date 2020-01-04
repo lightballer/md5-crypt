@@ -2,9 +2,10 @@
   "name": "md5-crypt",
   "version": "1.0.0",
   "description": "Node.js md5 console cryptor & decryptor",
-  "main": "app.js",
+  "main": "main.js",
   "scripts": {
-    "test": "node app.js"
+    "start": "node main.js",
+    "test": "node/crypt.test.js",
   },
   "repository": {
     "type": "git",
