@@ -1,6 +1,5 @@
 const { encrypt, decrypt } = require('../lib/crypt');
 
-// Wrap
 const test = (before, after, fn) => input => after(fn(before(input)));
 
 const before = data => {
