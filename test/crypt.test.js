@@ -19,12 +19,11 @@ const repeat = input => encrypt(input.repeat(count));
 const wrapped = wrapper(before, after, repeat);
 
 
-//Tests
+// Tests
 const test1 = wrapped('123');
 console.log(test1);
 
 const test2 = wrapped('abcd');
 console.log(test2);
-
 
 
