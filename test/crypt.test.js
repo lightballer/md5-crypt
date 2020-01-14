@@ -1,7 +1,7 @@
 const { encrypt, decrypt } = require('../lib/crypt');
 
 //Wrap
-const wrapper = (before, after, fn) => input => after(fn(before(input)));
+const test = (before, after, fn) => input => after(fn(before(input)));
 
 const before = data => {
     console.time('Compilation time');
@@ -25,5 +25,4 @@ console.log(test1);
 
 const test2 = wrapped('abcd');
 console.log(test2);
-
 
